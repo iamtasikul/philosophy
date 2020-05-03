@@ -1,4 +1,5 @@
 <?php
+require_once get_theme_file_path('/inc/tgm.php');
 if (site_url() == "http://localhost/wp") {
     define("VERSION", time());
 } else {
