@@ -68,6 +68,25 @@ function philosophy_widgets()
         'before_title'  => '<h3 class="quarter-top-margin">',
         'after_title'   => '</h3>',
     ));
+    register_sidebar(array(
+        'name'          => __('Contact Page Maps Section', 'philosophy'),
+        'id'            => 'contact-maps',
+        'description'   => __('Widgets in this area will be shown on contact page.', 'philosophy'),
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '',
+        'after_title'   => '',
+    ));
+
+    register_sidebar(array(
+        'name'          => __('Contact Page Information Section', 'philosophy'),
+        'id'            => 'contact-info',
+        'description'   => __('Widgets in this area will be shown on contact page.', 'philosophy'),
+        'before_widget' => '<div id="%1$s" class="col-block %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="quarter-top-margin">',
+        'after_title'   => '</h3>',
+    ));
 }
 
 add_action("widgets_init", "philosophy_widgets");
