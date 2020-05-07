@@ -10,3 +10,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: philosophy
 Tags: blog,education,news
 */
+.header__logo h1 {
+  margin: 0px;
+  font-weight: bold;
+}
+
+.header__logo h1 a {
+  color: #fff;
+  text-decoration: none;
+}
