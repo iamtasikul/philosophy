@@ -38,9 +38,9 @@
                 </div> <!-- end header__logo -->
 
                 <?php
-                if (is_active_sidebar("header-section")) {
-                    dynamic_sidebar("header-section");
-                }
+                // if (is_active_sidebar("header-section")) {
+                //     dynamic_sidebar("header-section");
+                // }
                 ?>
 
                 <a class="header__search-trigger" href="#0"></a>

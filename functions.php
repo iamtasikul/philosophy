@@ -157,3 +157,43 @@ FORM;
 
 
 add_filter("get_search_form", "philosophy_search_form");
+
+function category_before_title()
+{
+    echo "<p>Before Title</p>";
+}
+
+add_action("philosphy_before_category_title", "category_before_title");
+
+function category_after_title()
+{
+    echo "<p>After Title</p>";
+}
+
+add_action("philosphy_after_category_title", "category_after_title");
+
+function category_before_desc()
+{
+    echo "<p>Before description</p>";
+}
+
+add_action("philosphy_before_category_desc", "category_before_desc");
+
+function category_after_desc()
+{
+    echo "<p>After description</p>";
+}
+
+add_action("philosphy_after_category_desc", "category_after_desc");
+
+function beginning_category_page($category_title)
+{
+    if ("New" == $category_title) {
+        $visit_count = get_option("category_new");
+        $visit_count = $visit_count ? $visit_count : 0;
+        $visit_count++;
+        update_option("category_new", $visit_count);
+    }
+}
+
+add_action("philosphy_category_page", "beginning_category_page");
