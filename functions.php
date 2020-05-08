@@ -158,12 +158,26 @@ FORM;
 
 add_filter("get_search_form", "philosophy_search_form");
 
-function category_before_title()
+function category_before_title1()
 {
-    echo "<p>Before Title</p>";
+    echo "<p>Before Title1</p>";
 }
 
-add_action("philosphy_before_category_title", "category_before_title");
+add_action("philosphy_before_category_title", "category_before_title1");
+
+function category_before_title2()
+{
+    echo "<p>Before Title2</p>";
+}
+
+add_action("philosphy_before_category_title", "category_before_title2");
+
+function category_before_title3()
+{
+    echo "<p>Before Title3</p>";
+}
+
+add_action("philosphy_before_category_title", "category_before_title3", 8);
 
 function category_after_title()
 {
