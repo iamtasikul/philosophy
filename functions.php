@@ -200,6 +200,14 @@ function category_after_desc()
 
 add_action("philosphy_after_category_desc", "category_after_desc");
 
+
+remove_action("philosphy_before_category_title", "category_before_title1");
+remove_action("philosphy_before_category_title", "category_before_title2",);
+remove_action("philosphy_before_category_title", "category_before_title3", 8);
+remove_action("philosphy_after_category_title", "category_after_title");
+remove_action("philosphy_before_category_desc", "category_before_desc");
+remove_action("philosphy_after_category_desc", "category_after_desc");
+
 function beginning_category_page($category_title)
 {
     if ("New" == $category_title) {
