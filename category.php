@@ -12,6 +12,7 @@ get_header("header");
             <?php //echo apply_filters("philosophy_text", "hello", "wonderful", "world"); 
             ?>
             <?php do_action("philosphy_before_category_title"); ?>
+            <h2><?php _e("New Translatable Text", 'philosophy'); ?></h2>
             <h1>
                 <?php single_cat_title(); ?>
             </h1>

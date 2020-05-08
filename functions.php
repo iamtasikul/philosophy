@@ -12,7 +12,7 @@ if (site_url() == "http://localhost/wp") {
 
 function philosophy_theme_setup()
 {
-    load_theme_textdomain("philosophy");
+    load_theme_textdomain("philosophy", get_theme_file_path("/languages"));
     add_theme_support("post-thumbnails");
     add_theme_support("custom-logo");
     add_theme_support("title-tag");
