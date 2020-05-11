@@ -272,3 +272,28 @@ function philosophy_cpt_slug_fix($post_link, $id)
     return $post_link;
 }
 add_filter('post_type_link', 'philosophy_cpt_slug_fix', 1, 2);
+
+function philosophy_footer_language_heading($title)
+{
+    if (is_post_type_archive('book') || is_tax('language')) {
+        $title = __('Languages', 'philosophy');
+    }
+
+    return $title;
+}
+
+add_filter('philosophy_footer_tag_heading', 'philosophy_footer_language_heading');
+
+function philosophy_footer_language_terms($tags)
+{
+    if (is_post_type_archive('book') || is_tax('language')) {
+        $tags = get_terms(array(
+            'taxonomy'   => 'language',
+            'hide_empty' => true
+        ));
+    }
+
+    return $tags;
+}
+
+add_filter('philosophy_footer_tag_items', 'philosophy_footer_language_terms');
