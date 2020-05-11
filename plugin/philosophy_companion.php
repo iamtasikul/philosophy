@@ -72,13 +72,19 @@ function philosophy_button($attributes)
 }
 add_shortcode('button', 'philosophy_button');
 
-function philosophy_button2($attributes, $content)
+function philosophy_button2($attributes, $content = "")
 {
 	return sprintf(
 		'<a class="btn btn--%s fullwidth" href="%s">%s</a>',
 		$attributes['type'],
 		$attributes['url'],
-		$content,
+		do_shortcode($content),
 	);
 }
 add_shortcode('button2', 'philosophy_button2');
+
+function philosophy_uppercase($attributes, $content = "")
+{
+	return strtoupper(do_shortcode($content));
+}
+add_shortcode('uc', 'philosophy_uppercase');
