@@ -11,21 +11,22 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: philosophy_companion
 */
 
-function philosophy_companion_register_my_cpts_book() {
+function philosophy_companion_register_my_cpts_book()
+{
 
 	/**
 	 * Post Type: Books.
 	 */
 
 	$labels = [
-		"name" => __( "Books", "philosophy" ),
-		"singular_name" => __( "Book", "philosophy" ),
-		"featured_image" => __( "Book Cover", "philosophy" ),
-		"set_featured_image" => __( "Set Book Cover Image", "philosophy" ),
+		"name" => __("Books", "philosophy"),
+		"singular_name" => __("Book", "philosophy"),
+		"featured_image" => __("Book Cover", "philosophy"),
+		"set_featured_image" => __("Set Book Cover Image", "philosophy"),
 	];
 
 	$args = [
-		"label" => __( "Books", "philosophy" ),
+		"label" => __("Books", "philosophy"),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -42,21 +43,34 @@ function philosophy_companion_register_my_cpts_book() {
 		"capability_type" => "post",
 		"map_meta_cap" => true,
 		"hierarchical" => false,
-		"rewrite" => [ "slug" => "book", "with_front" => true ],
+		"rewrite" => ["slug" => "book", "with_front" => true],
 		"query_var" => true,
-		"supports" => [ "title", "editor", "thumbnail" ],
+		"supports" => ["title", "editor", "thumbnail"],
 	];
 
-	register_post_type( "book", $args );
+	register_post_type("book", $args);
 }
 
-add_action( 'init', 'philosophy_companion_register_my_cpts_book' );
+add_action('init', 'philosophy_companion_register_my_cpts_book');
 
-function philosophy_button($attributes){
-return sprintf('<a class="btn btn--%s fullwidth" href="%s">%s</a>',
-$attributes['type'],
-$attributes['url'],
-$attributes['title']
-);
+function philosophy_button($attributes)
+{
+	return sprintf(
+		'<a class="btn btn--%s fullwidth" href="%s">%s</a>',
+		$attributes['type'],
+		$attributes['url'],
+		$attributes['title']
+	);
 }
-add_shortcode( 'button', 'philosophy_button' );
+add_shortcode('button', 'philosophy_button');
+
+function philosophy_button2($attributes, $content)
+{
+	return sprintf(
+		'<a class="btn btn--%s fullwidth" href="%s">%s</a>',
+		$attributes['type'],
+		$attributes['url'],
+		$content,
+	);
+}
+add_shortcode('button2', 'philosophy_button2');
