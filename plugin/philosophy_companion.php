@@ -55,11 +55,19 @@ add_action('init', 'philosophy_companion_register_my_cpts_book');
 
 function philosophy_button($attributes)
 {
+	$default = array(
+		'type' => 'primary',
+		'title' => __("Button", "philosophy"),
+		'url' => '',
+	);
+
+	$button_attributes = shortcode_atts($default, $attributes);
+
 	return sprintf(
 		'<a class="btn btn--%s fullwidth" href="%s">%s</a>',
-		$attributes['type'],
-		$attributes['url'],
-		$attributes['title']
+		$button_attributes['type'],
+		$button_attributes['title'],
+		$button_attributes['url'],
 	);
 }
 add_shortcode('button', 'philosophy_button');
